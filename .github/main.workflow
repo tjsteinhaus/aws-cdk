@@ -1,8 +1,8 @@
 workflow "New workflow" {
   on = "push"
   resolves = [
-    "Install NPM Packages",
     "npm run deploy -- -vd",
+    "Install NPM Packages",
   ]
 }
 
@@ -14,7 +14,7 @@ action "Install NPM Packages" {
 action "chmod directory to 0777" {
   uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
   needs = ["Install NPM Packages"]
-  runs = "chmod -R 0777 ./*"
+  runs = "chmod -R 0777 .\\*"
 }
 
 action "npm run deploy -- -vd" {
