@@ -8,6 +8,11 @@ action "Install NPM Packages" {
   runs = "npm install"
 }
 
+action "CHMOD" {
+  uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
+  runs = "chmod -R77 ./"
+}
+
 action "npm run deploy -- -vd" {
   uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
   runs = "npm run deploy -- -vd"
