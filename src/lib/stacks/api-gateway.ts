@@ -18,7 +18,7 @@ export class ApiGatewayStack extends cdk.Stack {
 		this.addOPTIONS( test, 'OPTIONS,GET' )
         test.addMethod('GET', new apigateway.LambdaIntegration(l))
         
-        const test2 = this.api.root.addResource('test2');
+        const test2 = this.api.root.addResource('test3');
 		this.addOPTIONS( test2, 'OPTIONS,GET' )
 		test2.addMethod('GET', new apigateway.LambdaIntegration(l))
 	}
