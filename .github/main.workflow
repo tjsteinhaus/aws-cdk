@@ -1,16 +1,16 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["GitHub Action for npm-1"]
+  resolves = ["npm run deploy -- -vd"]
 }
 
-action "GitHub Action for npm" {
+action "Install NPM Packages" {
   uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
   runs = "npm install"
 }
 
-action "GitHub Action for npm-1" {
+action "npm run deploy -- -vd" {
   uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
-  needs = ["GitHub Action for npm"]
   runs = "npm run deploy -- -vd"
   secrets = ["GITHUB_TOKEN", "AWS_DEFAULT_REGION", "AWS_SECRET_ACCESS_KEY", "AWS_DEFAULT_OUTPUT", "AWS_REGION", "AWS_ACCESS_KEY_ID"]
+  needs = ["Install NPM Packages"]
 }
