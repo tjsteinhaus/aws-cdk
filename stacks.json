@@ -1,0 +1,8 @@
+{
+	"test1": [
+		"api-stack"
+	],
+	"test2": [
+		"lambda-api-stack"
+	]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "aws",
+  "version": "0.1.0",
+  "bin": {
+    "aws": "index.js"
+  },
+  "scripts": {
+    "build": "tsc --project ./tsconfig.json",
+    "watch": "tsc -w --project ./tsconfig.json",
+    "cdk": "cdk",
+    "deploy": "node dist/deploy.js"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.18",
+    "@types/lodash": "^4.14.120",
+    "@types/node": "^8.9.4",
+    "aws-cdk": "^0.23.0",
+    "typescript": "^3.1.2"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-apigateway": "^0.23.0",
+    "@aws-cdk/aws-dynamodb": "^0.23.0",
+    "@aws-cdk/aws-lambda": "^0.23.0",
+    "@aws-cdk/cdk": "^0.23.0",
+    "aws-lambda": "^0.1.2",
+    "chalk": "^2.4.2",
+    "figlet": "^1.2.1",
+    "lodash": "^4.17.11",
+    "source-map-support": "^0.5.9",
+    "util": "^0.11.1"
+  }
+}
