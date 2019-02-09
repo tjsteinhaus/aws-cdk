@@ -6,6 +6,9 @@ const chalk = require( 'chalk' );
 const { readdirSync, existsSync, readFileSync } = require( 'fs' );
 const { resolve, join } = require( 'path' );
 const { spawnSync } = require( 'child_process' );
+require( 'dotenv' ).config();
+
+console.log( process.env );
 
 // Lambda Folder Path
 const lambda_path = resolve( __dirname, '../code/lambda/' );
