@@ -90,7 +90,7 @@ class DeployClass {
 		console.log( chalk.underline.bold( 'A) Install Node Packages for Lambda\'s and run Webpack to bundle our Lambda\'s' ) );
 	
 		let folder_count = 1;
-		readdirSync( lambda_path ).forEach( async ( folder: any ) => {
+		await readdirSync( lambda_path ).forEach( async ( folder: any ) => {
 			let verbose = 'ignore';
 			const folderPath = join( lambda_path, folder );
 			const packageJsonPath = join( folderPath, 'package.json' );
@@ -113,7 +113,7 @@ class DeployClass {
 
 			// Run Webpack
 			console.log( chalk.magenta( `      b) Run Webpack` ) );
-			await spawnSync( 'npm', [ 'build' ], { env: process.env, cwd: folderPath, stdio: verbose } );
+			await spawnSync( 'npm', [ 'run', 'build' ], { env: process.env, cwd: folderPath, stdio: verbose } );
 		} );
 	}
 
