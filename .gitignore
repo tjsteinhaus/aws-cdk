@@ -2,3 +2,4 @@
 *.d.ts
 node_modules
 !dist/deploy.js
+!webpack.config.js
