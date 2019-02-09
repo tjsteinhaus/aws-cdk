@@ -113,7 +113,7 @@ class DeployClass {
 
 			// Run Webpack
 			console.log( chalk.magenta( `      b) Run Webpack` ) );
-			await spawnSync( 'webpack', { env: process.env, cwd: folderPath, stdio: verbose } );
+			await spawnSync( 'npm', [ 'build' ], { env: process.env, cwd: folderPath, stdio: verbose } );
 		} );
 	}
 
