@@ -19,13 +19,10 @@ RUN apk --no-cache add \
 		echo 'region = $AWS_DEFAULT_REGION'; \
 		echo 'aws_access_key_id = $AWS_ACCESS_KEY_ID'; \
 		echo 'aws_secret_access_key = $AWS_SECRET_ACCESS_KEY'; \
-	} > /root/.aws/config
-	
-RUN npm install; \
-	cdk deploy;
+	} > /root/.aws/credentials
 
 COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT [ "aws" ]
+ENTRYPOINT [ "./entrypoint.sh" ]
